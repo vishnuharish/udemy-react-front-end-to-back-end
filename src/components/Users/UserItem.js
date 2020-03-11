@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-const UserItem = ({ avatar_url, login, html_url }) => {
+const UserItem = ({ user: { avatar_url, login, html_url } }) => {
 	return (
 		<div className='card text-center'>
 			<img
@@ -21,9 +21,7 @@ const UserItem = ({ avatar_url, login, html_url }) => {
 };
 
 UserItem.propTypes = {
-	avatar_url: PropTypes.string.isRequired,
-	login: PropTypes.string.isRequired,
-	html_url: PropTypes.string.isRequired
+	user: PropTypes.object.isRequired
 };
 
 export default UserItem;
